@@ -78,6 +78,21 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0"
 ]
+#=======================================
+# Banner
+#=======================================
+
+def banner():
+    print(col(r"""
+                            _   __ __  ____  _____
+   ____  ____ ___  ____  (_) / // / / __ \|__  /
+  / __ \/ __ `__ \/ __ \/ / / // /_/ / / / /_ < 
+ / /_/ / / / / / / / / / / /__  __/ /_/ /___/ / 
+ \____/_/ /_/ /_/_/ /_/_/    /_/  \____//____/  
+    """, C.CYN, C.BOLD))
+    print(col("  Advance 403 and 401 bypass + Anamoly checking Tool\n", C.DIM))
+    print(col("  Developed By - Abhishek Gupta - linkedin.com/in/abhishek26gupta\n", C.DIM))
+
 
 # ==========================================
 # Custom Help Manual
@@ -161,6 +176,7 @@ def toggle_case(path):
     return res
 
 async def main(target, concurrency, jitter, custom_cookies, filter_codes_str, manual_filter_sizes, proxy, output_file):
+    banner()
     parsed = urlparse(target)
     base_url = f"{parsed.scheme}://{parsed.netloc}"
     domain = parsed.netloc
